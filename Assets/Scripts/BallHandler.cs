@@ -26,7 +26,6 @@ public class BallHandler : MonoBehaviour
     void Update()
     {
         if(currentBallRigidbody == null){ return; }
-
         if (!Touchscreen.current.primaryTouch.press.isPressed) 
             //called every frame but if finger not on screen there is no value so have to do if return
         { 
@@ -42,7 +41,7 @@ public class BallHandler : MonoBehaviour
 
         Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
         Vector2 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
-        currentBallRigidbody.position = worldPosition;
+       currentBallRigidbody.position = worldPosition;
     }
 
     private void SpawnNewBall()
